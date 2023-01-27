@@ -137,12 +137,14 @@ const HomeSection = () => {
         </div>
       </div>
       <div className={styles.scroll}>
-        <h1 className={styles.scrollHeading}>Keep Scrolling</h1>
-        {/* <i class="bx bx-chevron-down"></i> */}
-        <div className={styles.scrollWrapper}>
-          <i class="bx bx-chevron-down"></i>
-          <i class="bx bx-chevron-down"></i>
-        </div>
+        <Link scroll={false} href={"/#journey"}>
+          <h1 className={styles.scrollHeading}>Keep Scrolling</h1>
+          {/* <i class="bx bx-chevron-down"></i> */}
+          <div className={styles.scrollWrapper}>
+            <i class="bx bx-chevron-down"></i>
+            <i class="bx bx-chevron-down"></i>
+          </div>
+        </Link>
       </div>
       <Link href={"/"} className={styles.buttonMobile}>
         <span>JOIN NOW</span>
