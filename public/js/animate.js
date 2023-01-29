@@ -76,6 +76,39 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
       },
       "some-label"
     );
+
+  const tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#journey",
+      pin: true,
+      scrub: 1,
+      // end: "bottom top",
+      end: "+=" + window.innerHeight * 5,
+      // markers: true,
+      onUpdate: (self) => {
+        console.log(self.progress);
+        if (self.progress > 0.99) {
+          // document.getElementById("nav").classList.remove("sticky");
+          document.getElementById("nav").classList.remove("transformNav");
+        } else {
+          document.getElementById("nav").classList.add("transformNav");
+        }
+      },
+      onLeaveBack: () =>
+        document.getElementById("nav").classList.remove("transformNav"),
+    },
+  });
+  tl2
+    .to("#slide1", {
+      transform: "scale(7)",
+    })
+    .to("#slide2", {
+      xPercent: 100,
+    })
+
+    .to("#slide3", {
+      xPercent: -100,
+    });
 }
 
 // const btn = document.getElementsByClassName("Home_icon__qn8Vn");

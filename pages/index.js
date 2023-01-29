@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
 import Layout from "../components/Layout";
+import AboutSection from "../components/sections/AboutSection";
 import HomeSection from "../components/sections/HomeSection";
 import JourneySection from "../components/sections/JourneySection";
 
@@ -19,8 +20,15 @@ export default function Home() {
       </Head>
       <HomeSection />
       <JourneySection />
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" />
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" />
+      <AboutSection />
+      <Script
+        strategy="beforeInteractive"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      />
+      <Script
+        strategy="beforeInteractive"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+      />
       <Script defer src="/js/animate.js" />
     </Layout>
   );
