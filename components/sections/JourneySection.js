@@ -33,8 +33,10 @@ const JourneySection = () => {
         className={`${styles.slide} ${styles.childSlide} ${styles.slide2}`}
         id="slide2"
       >
-        <div className={styles.left}>
-          <h1 className={styles.heading}>1{")"} Punjab Ki Galiyon Se</h1>
+        <div className={styles.left} id="left2">
+          <h1 className={styles.heading} id="heading2">
+            1{")"} Punjab Ki Galiyon Se
+          </h1>
           <p className={styles.para}>
             One of the most impressive things about Punjabi food is its variety.
             It is a state synonymous with food. Punjabi food is a lot like
@@ -93,8 +95,10 @@ const JourneySection = () => {
         className={`${styles.slide} ${styles.childSlide} ${styles.slide3}`}
         id="slide3"
       >
-        <div className={styles.left}>
-          <h1 className={styles.heading}>2{")"} Highway On My Plate</h1>
+        <div className={styles.left} id="left3">
+          <h1 className={styles.heading} id="heading3">
+            2{")"} Highway On My Plate
+          </h1>
           <p className={styles.para}>
             When we talk about Indian Street Food, how can we forget the Dhabas.
             At Chatora you will also be able to enjoy your favourite dhaba food
@@ -153,8 +157,10 @@ const JourneySection = () => {
         className={`${styles.slide} ${styles.childSlide} ${styles.slide4}`}
         id="slide4"
       >
-        <div className={styles.left}>
-          <h1 className={styles.heading}>3{")"} Purani Dilli Ka Jaadu</h1>
+        <div className={styles.left} id="left4">
+          <h1 className={styles.heading} id="heading4">
+            3{")"} Purani Dilli Ka Jaadu
+          </h1>
           <p className={styles.para}>
             Whether it be the squeezed streets of Old Delhi where vendors mix
             different flavors; the overcrowded bazaars of Central or South Delhi

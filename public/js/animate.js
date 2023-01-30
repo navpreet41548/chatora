@@ -102,12 +102,20 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
     .to("#slide1", {
       transform: "scale(7)",
     })
+    .to("#left2", {
+      opacity: 1,
+    })
     .to("#slide2", {
       xPercent: 100,
     })
-
+    .to("#left3", {
+      opacity: 1,
+    })
     .to("#slide3", {
       xPercent: -100,
+    })
+    .to("#left4", {
+      opacity: 1,
     });
 }
 
