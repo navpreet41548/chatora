@@ -3,6 +3,7 @@ import Image from "next/image";
 import Script from "next/script";
 import Layout from "../components/Layout";
 import AboutSection from "../components/sections/AboutSection";
+import Banner from "../components/sections/Banner";
 import HomeSection from "../components/sections/HomeSection";
 import JourneySection from "../components/sections/JourneySection";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeSection />
+      <Banner />
       <JourneySection />
       <AboutSection />
       <Script
