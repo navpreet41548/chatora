@@ -1,12 +1,286 @@
 .container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.left {
+  width: 60%;
+}
+
+.right {
+  width: 35%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
+}
+
+.backgroundImage1 {
+  width: 100%;
+  height: auto;
+}
+
+.image1 {
+  position: absolute;
+  z-index: 1;
+  width: 70%;
+  height: auto;
+  transform: translateX(-30%);
+}
+
+.headingWrapper {
+  overflow: hidden;
+}
+
+.headingContainer {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  width: 7px;
+  height: 90%;
+  background-color: var(--font-color);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  left: 0;
 }
 
 .heading {
-  text-align: center;
+  margin-left: 20px;
+}
+
+.para {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.diff {
+  color: var(--main-color);
+}
+
+.bottom {
+  display: flex;
+  background-color: var(--font-color);
+  padding: 2% 0;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+.bottomLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 2%;
+  width: 15%;
+  transform: scale(1.6);
+}
+
+.backgroundImage2 {
+  height: auto;
+  width: 100%;
+}
+
+.image2 {
+  position: absolute;
+  width: 70%;
+  height: auto;
+}
+
+.lastBackgroundImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 60%;
+  opacity: 0.1;
+  filter: blur(2px);
+  height: auto;
+}
+
+.bottomRight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 5%; */
+  width: 65%;
+}
+
+.bottomHeading {
+  color: white;
+}
+.bottomPara {
+  color: white;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 1600px) {
+  .heading {
+    font-size: 25px;
+  }
+  .bottomHeading {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .heading {
+    font-size: 25px;
+  }
+  .bottomHeading {
+    font-size: 25px;
+  }
+
+  .left {
+    width: 65%;
+  }
+
+  .right {
+    width: 30%;
+  }
+  .bottomPara {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .heading {
+    font-size: 22px;
+  }
+  .bottomHeading {
+    font-size: 20px;
+  }
+  .para {
+    font-size: 17px;
+  }
+  .bottomPara {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .top {
+    flex-direction: column-reverse;
+    padding: 0 5%;
+  }
+  .right {
+    width: 300px;
+  }
+  .left {
+    width: 100%;
+  }
+  .headingContainer {
+    margin-top: 20px;
+  }
+  .heading {
+    font-size: 30px;
+    text-align: center;
+    margin-left: 0;
+  }
+  .para {
+    text-align: center;
+    font-size: 20px;
+  }
+  .line {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .bottom {
+    position: relative;
+    margin-top: 14%;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .bottomLeft {
+    position: absolute;
+    width: 150px;
+    top: 0%;
+    transform: scale(1) translateY(-50%);
+    z-index: 2;
+  }
+  .bottomRight {
+    width: 100%;
+    padding: 0 5%;
+  }
+  .bottomHeading {
+    text-align: center;
+  }
+  .bottomPara {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .top {
+    padding: 0 3%;
+  }
+  .heading {
+    font-size: 23px;
+  }
+  .para {
+    font-size: 17px;
+  }
+  .bottomHeading {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heading {
+    font-size: 20px;
+  }
+  .bottomRight {
+    padding: 0 2%;
+  }
+  .bottomLeft {
+    width: 110px;
+    margin-left: 0;
+  }
+
+  .bottom {
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+  .lastBackgroundImage {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .right {
+    width: 70%;
+  }
+  .heading {
+    font-size: 15px;
+  }
+  .bottom {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    margin-top: 100px;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .heading {
+    font-size: 13px;
+  }
+  .para {
+    font-size: 15px;
+  }
 }

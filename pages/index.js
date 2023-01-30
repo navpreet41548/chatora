@@ -20,8 +20,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeSection />
-      <Banner />
       <JourneySection />
+      <Banner />
       <AboutSection />
       <Script
         strategy="beforeInteractive"

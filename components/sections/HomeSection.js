@@ -4,6 +4,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import styles from "/styles/Home.module.css";
 import { gsap } from "gsap";
 import Header from "../Header/Header";
+import { motion } from "framer-motion";
 
 const HomeSection = () => {
   const comp = useRef();
@@ -61,10 +62,30 @@ const HomeSection = () => {
             <p className={styles.headLine}>CHEF&apos;S SPECIAL</p>
             <div className={styles.line}></div>
           </div>
-          <h1 className={styles.mainHeading}>
-            EAT THE WAY YOU’VE ALWAYS{" "}
-            <span className={styles.diff}>DESIRED</span>
-          </h1>
+          <div className={styles.headingWrapper}>
+            <motion.h1
+              whileInView={{ transform: "translateY(0%)" }}
+              initial={{ transform: "translateY(100%)" }}
+              transition={{
+                delay: 0.5,
+              }}
+              className={styles.mainHeading}
+            >
+              EAT THE WAY YOU’VE
+            </motion.h1>
+          </div>
+          <div className={styles.headingWrapper}>
+            <motion.h1
+              whileInView={{ transform: "translateY(0%)" }}
+              initial={{ transform: "translateY(100%)" }}
+              transition={{
+                delay: 0.7,
+              }}
+              className={styles.mainHeading}
+            >
+              ALWAYS <span className={styles.diff}>DESIRED</span>
+            </motion.h1>
+          </div>
           <p className={styles.para}>
             A New Way to Experience Indian Food India
           </p>
@@ -99,6 +120,7 @@ const HomeSection = () => {
             height={500}
             alt="Food Background Image"
           />
+
           <Image
             className={`${styles.foodImage} ${styles.foodImage1}`}
             src={"/images/home/food1.png"}

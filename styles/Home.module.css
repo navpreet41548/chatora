@@ -37,6 +37,11 @@
   height: 2px;
   background-color: var(--main-color);
 }
+
+.headingWrapper {
+  overflow: hidden;
+}
+
 .mainHeading {
   color: var(--font-color);
   font-size: 52px;

@@ -86,7 +86,6 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
       end: "+=" + window.innerHeight * 5,
       // markers: true,
       onUpdate: (self) => {
-        console.log(self.progress);
         if (self.progress > 0.99) {
           // document.getElementById("nav").classList.remove("sticky");
           document.getElementById("nav").classList.remove("transformNav");
@@ -118,6 +117,19 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
       opacity: 1,
     });
 }
+
+const tl3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#about",
+    start: "top bottom",
+    end: "bottom bottom",
+    scrub: 4,
+  },
+});
+
+tl3.to("#stall", {
+  xPercent: 40,
+});
 
 // const btn = document.getElementsByClassName("Home_icon__qn8Vn");
 

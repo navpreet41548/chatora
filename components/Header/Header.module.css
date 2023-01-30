@@ -99,7 +99,6 @@
 @media screen and (max-width: 850px) {
   .nav {
     box-shadow: 0px 0px 6px 0px #d7d7d7;
-    z-index: 1;
     background-color: white;
   }
   .ul {
