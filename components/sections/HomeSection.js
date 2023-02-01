@@ -31,7 +31,7 @@ const HomeSection = () => {
   // }, []);
 
   return (
-    <div className={styles.container} ref={container}>
+    <div className={styles.container} ref={container} id="home">
       <div className={styles.circle} ref={circle}>
         <Image
           src={"/images/home/circle.png"}
@@ -159,7 +159,7 @@ const HomeSection = () => {
         </div>
       </div>
       <div className={styles.scroll}>
-        <Link scroll={false} href={"/#journey"}>
+        <Link scroll={false} href={"/#about"}>
           <h1 className={styles.scrollHeading}>Keep Scrolling</h1>
           {/* <i class="bx bx-chevron-down"></i> */}
           <div className={styles.scrollWrapper}>

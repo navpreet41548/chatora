@@ -15,6 +15,13 @@ const JourneySection = () => {
           You will Experience at Chatora.
         </p>
         <Image
+          className={`${styles.backgroundImg} ${styles.backgroundImgMain} `}
+          src="/images/journey/slide/slideBackground.webp"
+          alt="Background Image"
+          width={"1800"}
+          height={"900"}
+        />
+        {/* <Image
           className={`${styles.backgroundImg} ${styles.backgroundImgMain} ${styles.mapDesktop}`}
           src="/images/journey/map.png"
           alt="Background Image"
@@ -27,7 +34,7 @@ const JourneySection = () => {
           alt="Background Image"
           width={"1800"}
           height={"900"}
-        />
+        /> */}
       </div>
       <div
         className={`${styles.slide} ${styles.childSlide} ${styles.slide2}`}

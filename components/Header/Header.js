@@ -29,32 +29,53 @@ const Header = () => {
         <ul className={styles.ul} ref={menuRef}>
           <li className={styles.li}>
             <Link
+              scroll={false}
               className={`${styles.link} ${styles.link1}`}
-              href={"/"}
+              href={"/#home"}
               onClick={removeClass}
             >
               HOME
             </Link>
           </li>
           <li className={styles.li}>
-            <Link className={styles.link} href={"/"} onClick={removeClass}>
+            <Link
+              scroll={false}
+              className={styles.link}
+              href={"/#about"}
+              onClick={removeClass}
+            >
               ABOUT
             </Link>
           </li>
           <li className={styles.li}>
-            <Link className={styles.link} href={"/"} onClick={removeClass}>
+            <Link
+              scroll={false}
+              className={styles.link}
+              href={"/#journey"}
+              onClick={removeClass}
+            >
               JOURNEY
             </Link>
           </li>
           <li className={styles.li}>
-            <Link className={styles.link} href={"/"} onClick={removeClass}>
+            <Link
+              scroll={false}
+              className={styles.link}
+              href={"/#menu"}
+              onClick={removeClass}
+            >
               MENU
             </Link>
           </li>
         </ul>
       </div>
       <div className={styles.right}>
-        <Link href={"/"} className={styles.button} ref={buttonRef}>
+        <Link
+          scroll={false}
+          href={"/#contact"}
+          className={styles.button}
+          ref={buttonRef}
+        >
           CONTACT US
         </Link>
       </div>

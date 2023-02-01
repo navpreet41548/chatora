@@ -10,6 +10,7 @@
   height: 100vh;
   position: absolute;
   overflow: hidden;
+  /* transition: all 0.2s ease; */
 }
 
 .mainSlide {
@@ -49,7 +50,7 @@
 .left {
   width: 30%;
   z-index: 1;
-  opacity: 0;
+  /* opacity: 0; */
 }
 .right {
   width: 20%;
@@ -111,11 +112,15 @@
 }
 
 .backgroundImgMain {
-  filter: blur(0px) brightness(100%);
+  filter: blur(0px) brightness(25%);
 }
 
 .slide1 {
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .slide2 {
   z-index: 9;
@@ -186,13 +191,13 @@
   }
   .mainHeading {
     margin-top: 10%;
-    font-size: 25px;
+    font-size: 30px;
   }
   .heading {
     font-size: 25px;
   }
   .mainPara {
-    font-size: 17px;
+    font-size: 20px;
     width: 90%;
     margin: 10px 0;
   }

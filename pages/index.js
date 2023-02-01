@@ -4,8 +4,11 @@ import Script from "next/script";
 import Layout from "../components/Layout";
 import AboutSection from "../components/sections/AboutSection";
 import Banner from "../components/sections/Banner";
+import Contact from "../components/sections/Contact";
 import HomeSection from "../components/sections/HomeSection";
 import JourneySection from "../components/sections/JourneySection";
+import Loader from "../components/sections/Loader";
+import Menu from "../components/sections/Menu";
 
 export default function Home() {
   return (
@@ -19,17 +22,36 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Loader />
       <HomeSection />
-      <JourneySection />
-      <Banner />
       <AboutSection />
+      <Banner />
+      <JourneySection />
+      <Menu />
+      <Contact />
       <Script
         strategy="beforeInteractive"
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
       />
       <Script
         strategy="beforeInteractive"
+        src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"
+      />
+      <Script
+        strategy="beforeInteractive"
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+      />
+      <Script
+        strategy="beforeInteractive"
+        src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"
+      />
+      <Script
+        strategy="beforeInteractive"
+        src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+      />
+      <Script
+        strategy="beforeInteractive"
+        src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"
       />
       <Script defer src="/js/animate.js" />
     </Layout>

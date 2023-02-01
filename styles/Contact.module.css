@@ -1,0 +1,403 @@
+.container {
+  display: flex;
+  min-height: 90vh;
+}
+
+.left {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainBanner {
+  background-color: rgba(255, 255, 255, 0.729);
+  backdrop-filter: blur(5px);
+  margin: 2% 0;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.mainHeading {
+  color: var(--font-color);
+}
+
+.mainPara {
+  font-size: 20px;
+  color: var(--font-color);
+  font-weight: 500;
+  margin: 5px 0;
+}
+.childBanner {
+  background-color: rgba(255, 255, 255, 0.729);
+  backdrop-filter: blur(5px);
+  margin: 2% 0;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+
+.icon {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon i {
+  font-size: 30px;
+  margin-right: 10px;
+  color: var(--font-color);
+}
+
+.para {
+  font-weight: 500;
+  width: 80%;
+  color: var(--font-color);
+}
+
+.backgroundImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+
+.heading {
+  color: var(--font-color);
+}
+
+.form {
+  position: relative;
+  width: 500px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.inputWrapper label {
+  /* opacity: 0; */
+  min-height: 20px;
+  font-size: 15px;
+  color: red;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0px 0px 4px 0px rgb(201, 201, 201);
+  border-radius: 30px;
+}
+
+.formIcon {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formIcon i {
+  font-size: 25px;
+  color: var(--main-color);
+}
+
+.input {
+  width: 85%;
+  border: none;
+  padding: 17px 0;
+  background: none;
+  outline: none;
+  font-size: 17px;
+  color: var(--font-color);
+}
+
+.textareaWrapper {
+  box-shadow: 0px 0px 4px 0px rgb(201, 201, 201);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.textarea {
+  width: 100%;
+  height: 150px;
+  font-family: var(--simple-font);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.button {
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 30px;
+  margin-top: 20px;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.button i {
+  font-size: 18px;
+}
+
+.button::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.13);
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.button:hover::after {
+  transform: scaleX(1);
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  width: 30%;
+}
+
+.socialIcon {
+  height: 50px;
+  width: 50px;
+  border: 1px solid var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socialIcon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  background-color: var(--main-color);
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover::after {
+  transform: scale(1);
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+}
+
+.socialIcon i {
+  font-size: 30px;
+  color: var(--font-color);
+}
+
+.floatingMessage {
+  position: absolute;
+  top: -4%;
+  background-color: white;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.226);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 5px;
+  animation: successMessageAnimation 0.2s ease;
+  white-space: nowrap;
+}
+
+.success {
+  color: #4bb543;
+}
+
+.error {
+  color: rgb(255, 58, 58);
+}
+
+@keyframes successMessageAnimation {
+  0% {
+    transform: translateY(-100%) translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%) translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .mainHeading {
+    font-size: 25px;
+  }
+
+  .mainPara {
+    font-size: 18px;
+  }
+  .heading {
+    font-size: 25px;
+  }
+
+  .input {
+    padding: 15px 0;
+  }
+  .textarea {
+    height: 130px;
+  }
+  .button {
+    padding: 14px 0;
+    font-size: 17px;
+  }
+  .socialIcon {
+    width: 45px;
+    height: 45px;
+  }
+  .socialIcon i {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .mainBanner {
+    width: 90%;
+  }
+  .form {
+    width: 75%;
+  }
+  .childBanner {
+    padding: 15px;
+  }
+  .iconContainer {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .left {
+    width: 40%;
+  }
+  .right {
+    width: 60%;
+  }
+
+  .mainBanner {
+    width: 95%;
+  }
+  .mainHeading {
+    font-size: 20px;
+  }
+  .mainPara {
+    font-size: 15px;
+  }
+  .childBanner {
+    width: 75%;
+  }
+  .icon i {
+    font-size: 25px;
+  }
+  .para {
+    font-size: 15px;
+  }
+  .form {
+    width: 80%;
+  }
+  .iconContainer {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .left {
+    display: none;
+  }
+  .right {
+    width: 100%;
+  }
+  .form {
+    width: 70%;
+  }
+  .iconContainer {
+    margin-top: 50px;
+  }
+  .socialIcon {
+    width: 60px;
+    height: 60px;
+  }
+  .socialIcon i {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .form {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .form {
+    width: 90%;
+  }
+  .iconContainer {
+    width: 70%;
+  }
+  .socialIcon {
+    width: 50px;
+    height: 50px;
+  }
+  .socialIcon i {
+    font-size: 25px;
+  }
+  .input {
+    padding: 13px 0;
+    font-size: 15px;
+  }
+
+  .button {
+    padding: 12px 0;
+  }
+  .heading {
+    font-size: 20px;
+  }
+}

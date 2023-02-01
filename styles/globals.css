@@ -2,6 +2,7 @@
 :root {
   --simple-font: "Quicksand", sans-serif;
   --main-color: #ff8c21;
+  --main-color2: #ff497b;
   --font-color: #202020;
 }
 
@@ -38,4 +39,35 @@ a {
 
 .transformNav {
   transform: translateY(-100%);
+}
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide-active .Menu_part1__rfh1x {
+  opacity: 1;
+}
+.swiper-slide-active .Menu_part2__ERnio {
+  opacity: 0;
+}
+.swiper-slide-active .Card_part1__i05JX {
+  opacity: 1;
+}
+.swiper-slide-active .Card_part2__BGDm_ {
+  opacity: 0;
+}
+
+.Menu_swiperContainerUl__2QKtp .swiper-wrapper {
+  justify-content: center !important;
+}
+
+.Menu_swiperContainerUl__2QKtp .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 950px) {
+  .Menu_swiperContainerUl__2QKtp .swiper-wrapper {
+    justify-content: unset !important;
+  }
 }

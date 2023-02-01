@@ -77,45 +77,96 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
       "some-label"
     );
 
-  const tl2 = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#journey",
-      pin: true,
-      scrub: 1,
-      // end: "bottom top",
-      end: "+=" + window.innerHeight * 5,
-      // markers: true,
-      onUpdate: (self) => {
-        if (self.progress > 0.99) {
-          // document.getElementById("nav").classList.remove("sticky");
-          document.getElementById("nav").classList.remove("transformNav");
-        } else {
-          document.getElementById("nav").classList.add("transformNav");
-        }
-      },
-      onLeaveBack: () =>
-        document.getElementById("nav").classList.remove("transformNav"),
-    },
+  // const tl2 = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: "#journey",
+  //     pin: true,
+  //     scrub: true,
+  //     start: "top top",
+  //     // end: "50% top",
+  //     end: "bottom top",
+  //     // end: "+=" + window.innerHeight * 3,
+  //     // markers: true,
+  //     onUpdate: (self) => {
+  //       if (self.progress > 0.99) {
+  //         // document.getElementById("nav").classList.remove("sticky");
+  //         document.getElementById("nav").classList.remove("transformNav");
+  //       } else {
+  //         document.getElementById("nav").classList.add("transformNav");
+  //       }
+  //     },
+  //     onLeaveBack: () =>
+  //       document.getElementById("nav").classList.remove("transformNav"),
+  //   },
+  // });
+  // tl2
+  //   .to("#slide1", {
+  //     // transform: "scale(7)",
+  //     transform: "translateX(-100%)",
+  //     // xPercent: -100,
+  //   })
+  //   .to("#slide2", {
+  //     transform: "translateX(100%)",
+  //     // xPercent: 100,
+  //   })
+  //   .to("#slide3", {
+  //     transform: "translateX(-100%)",
+  //     // xPercent: -100,
+  //   });
+
+  const tween = new TimelineLite({
+    onUpdate: onUpdate,
+    onComplete: onComplete,
   });
-  tl2
-    .to("#slide1", {
-      transform: "scale(7)",
+  // var tween = new TimelineMax();
+
+  tween.add(
+    TweenLite.to("#slide1", 0.5, {
+      transform: "translateX(100%)",
+      ease: Linear.easeNone,
     })
-    .to("#left2", {
-      opacity: 1,
+  );
+  tween.add(
+    TweenLite.to("#slide2", 0.5, {
+      transform: "translateX(-100%)",
+      ease: Linear.easeNone,
     })
-    .to("#slide2", {
-      xPercent: 100,
-    })
-    .to("#left3", {
-      opacity: 1,
-    })
-    .to("#slide3", {
-      xPercent: -100,
-    })
-    .to("#left4", {
-      opacity: 1,
-    });
+  );
+  const controller = new ScrollMagic.Controller();
+  const scene = new ScrollMagic.Scene({
+    triggerElement: "#journey",
+    duration: "100%",
+    triggerHook: "0",
+  })
+    .setTween(tween)
+    .setPin("#journey")
+    .addTo(controller);
+
+  const journey = document.getElementById("journey");
+
+  function onUpdate(self) {
+    if (journey.getBoundingClientRect().top <= 10) {
+      document.getElementById("nav").classList.add("transformNav");
+    } else {
+      document.getElementById("nav").classList.remove("transformNav");
+    }
+    // const progress = scene.progress();
+    // // const progress = self.progress;
+    // console.log(self);
+    // if (progress > 0.99) {
+    //   // document.getElementById("nav").classList.remove("sticky");
+    //   document.getElementById("nav").classList.remove("transformNav");
+    // } else {
+    //   document.getElementById("nav").classList.add("transformNav");
+    // }
+    // if (progress <= 0) {
+    //   document.getElementById("nav").classList.remove("transformNav");
+    // }
+  }
+
+  function onComplete() {
+    document.getElementById("nav").classList.remove("transformNav");
+  }
 }
 
 const tl3 = gsap.timeline({
