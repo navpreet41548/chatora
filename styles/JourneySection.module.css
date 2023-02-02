@@ -10,7 +10,7 @@
   height: 100%;
   position: absolute;
   overflow: hidden;
-  /* transition: all 0.2s ease; */
+  transition: all 0.5s ease;
 }
 
 .mainSlide {
