@@ -113,60 +113,112 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
   //     transform: "translateX(-100%)",
   //     // xPercent: -100,
   //   });
+  // !
+  // const tween = new TimelineLite({
+  //   onUpdate: onUpdate,
+  //   onComplete: onComplete,
+  // });
+  // // var tween = new TimelineMax();
 
-  const tween = new TimelineLite({
+  // tween.add(
+  //   TweenLite.to("#slide1", 1, {
+  //     // transform: "translateX(100%)",
+  //     xPercent: 100,
+  //     ease: Linear.easeNone,
+  //   })
+  // );
+  // tween.add(
+  //   TweenLite.to("#slide2", 1, {
+  //     // transform: "translateX(-100%)",
+  //     xPercent: -100,
+  //     ease: Linear.easeNone,
+  //   })
+  // );
+  // const controller = new ScrollMagic.Controller({ refreshInterval: 1 });
+  // const scene = new ScrollMagic.Scene({
+  //   triggerElement: "#journey",
+  //   duration: "700%",
+  //   triggerHook: "0",
+  // })
+  //   .setTween(tween)
+  //   .setPin("#journey")
+  //   .addTo(controller);
+
+  // const journey = document.getElementById("journey");
+
+  // function onUpdate(self) {
+  //   if (journey.getBoundingClientRect().top <= 10) {
+  //     document.getElementById("nav").classList.add("transformNav");
+  //   } else {
+  //     document.getElementById("nav").classList.remove("transformNav");
+  //   }
+  // }
+
+  // function onComplete() {
+  //   document.getElementById("nav").classList.remove("transformNav");
+  // }
+  // !
+
+  var controller = new ScrollMagic.Controller();
+  var sections = document.querySelectorAll(".JourneySection_slide__J88nk");
+  var tl2 = new TimelineMax({
     onUpdate: onUpdate,
     onComplete: onComplete,
+    onReverseComplete: onReverseComplete,
   });
-  // var tween = new TimelineMax();
+  var offset = window.innerHeight;
+  tl2.to(sections[0], 1, { xPercent: -100, ease: Linear.easeNone }, "+=1");
+  tl2.to(sections[1], 1, { xPercent: 100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[3], 1, { xPercent: 100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[4], 1, { yPercent: 100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[5], 1, { xPercent: -100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[6], 1, { yPercent: -100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[7], 1, { xPercent: -100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[8], 1, { yPercent: 100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[9], 1, { xPercent: -100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[10], 1, { xPercent: 100, ease: Linear.easeNone }, "+=1");
+  // tl.to(sections[11], 1, { xPercent: -100, ease: Linear.easeNone }, "+=1");
 
-  tween.add(
-    TweenLite.to("#slide1", 0.5, {
-      transform: "translateX(100%)",
-      ease: Linear.easeNone,
-    })
-  );
-  tween.add(
-    TweenLite.to("#slide2", 0.5, {
-      transform: "translateX(-100%)",
-      ease: Linear.easeNone,
-    })
-  );
-  const controller = new ScrollMagic.Controller();
-  const scene = new ScrollMagic.Scene({
+  new ScrollMagic.Scene({
     triggerElement: "#journey",
-    duration: "100%",
-    triggerHook: "0",
+    triggerHook: 0,
+    duration: "500%",
   })
-    .setTween(tween)
     .setPin("#journey")
+    .setTween(tl2)
+
     .addTo(controller);
+
+  for (let i = 0; i < sections.length; i++) {
+    const element = sections[i];
+    var tl2 = new TimelineMax();
+
+    new ScrollMagic.Scene({
+      triggerElement: "#journey",
+      triggerHook: 0,
+      offset: i * offset,
+    })
+      .setTween(tl2)
+      .addTo(controller);
+  }
 
   const journey = document.getElementById("journey");
 
   function onUpdate(self) {
-    if (journey.getBoundingClientRect().top <= 10) {
+    if (journey.getBoundingClientRect().top <= 40) {
       document.getElementById("nav").classList.add("transformNav");
     } else {
       document.getElementById("nav").classList.remove("transformNav");
     }
-    // const progress = scene.progress();
-    // // const progress = self.progress;
-    // console.log(self);
-    // if (progress > 0.99) {
-    //   // document.getElementById("nav").classList.remove("sticky");
-    //   document.getElementById("nav").classList.remove("transformNav");
-    // } else {
-    //   document.getElementById("nav").classList.add("transformNav");
-    // }
-    // if (progress <= 0) {
-    //   document.getElementById("nav").classList.remove("transformNav");
-    // }
   }
-
   function onComplete() {
     document.getElementById("nav").classList.remove("transformNav");
   }
+  function onReverseComplete() {
+    document.getElementById("nav").classList.remove("transformNav");
+  }
+
+  // $(".JourneySection_slide__J88nk").each(function (i) {});
 }
 
 const tl3 = gsap.timeline({

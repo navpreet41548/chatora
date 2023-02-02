@@ -8,6 +8,7 @@ import Contact from "../components/sections/Contact";
 import HomeSection from "../components/sections/HomeSection";
 import JourneySection from "../components/sections/JourneySection";
 import Loader from "../components/sections/Loader";
+import Loader2 from "../components/sections/Loader2";
 import Menu from "../components/sections/Menu";
 
 export default function Home() {
@@ -22,7 +23,8 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Loader />
+      {/* <Loader /> */}
+      <Loader2 />
       <HomeSection />
       <AboutSection />
       <Banner />
@@ -31,7 +33,15 @@ export default function Home() {
       <Contact />
       <Script
         strategy="beforeInteractive"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+      />
+      <Script
+        strategy="beforeInteractive"
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      />
+      <Script
+        strategy="beforeInteractive"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
       />
       <Script
         strategy="beforeInteractive"

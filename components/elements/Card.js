@@ -18,7 +18,7 @@ const Card = ({ name, desc, imgName }) => {
       <div className={styles.part2}>
         <Image
           className={styles.subImg}
-          src={"/images/menu/punjab/dahiBhalla.png"}
+          src={`/images/menu/${imgName}`}
           width={150}
           height={150}
           alt="Menu Food Image"

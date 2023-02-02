@@ -11,6 +11,7 @@ const Header = () => {
   const removeClass = () => {
     setIsOpen(false);
     menuRef.current.classList.remove(`${styles.ulActive}`);
+    buttonRef.current.classList.remove(`${styles.buttonActive}`);
   };
 
   const toggleMenu = () => {
@@ -80,7 +81,7 @@ const Header = () => {
         </Link>
       </div>
       <div className={styles.burger} onClick={toggleMenu}>
-        <Hamburger />
+        <Hamburger toggled={isOpen} toggle={setIsOpen} />
       </div>
     </nav>
   );

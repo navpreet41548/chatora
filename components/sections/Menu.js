@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "/styles/Menu.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Autoplay } from "swiper";
+import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import Card from "../elements/Card";
@@ -75,14 +75,16 @@ const Menu = () => {
       </ul> */}
 
       <Swiper
+        modules={[Navigation, Pagination]}
         slidesPerView={1}
         spaceBetween={10}
         // centeredSlides={true}
         // centeredSlidesBounds={mobile ? false : true}
-        centeredSlidesBounds={false}
+        // centeredSlidesBounds={true}
         pagination={{
           clickable: true,
         }}
+        navigation={true}
         breakpoints={{
           200: {
             slidesPerView: 2,

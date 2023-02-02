@@ -300,6 +300,11 @@
   }
 }
 
+@media screen and (max-width: 1400px) {
+  .container {
+    min-height: 88vh;
+  }
+}
 @media screen and (max-width: 1230px) {
   .mainBanner {
     width: 90%;
