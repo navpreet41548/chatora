@@ -16,9 +16,9 @@ const JourneySection = () => {
         </p>
         <Image
           className={`${styles.backgroundImg} ${styles.backgroundImgMain} `}
-          src="/images/journey/slide/slideBackground.webp"
+          src="/images/journey/slideBackground/main.png"
           alt="Background Image"
-          width={"1800"}
+          width={"300"}
           height={"900"}
         />
         {/* <Image
@@ -86,15 +86,15 @@ const JourneySection = () => {
             id="slideImg2"
             src="/images/journey/slide/1.jpg"
             alt="Background Image"
-            width={"400"}
+            width={"300"}
             height={"900"}
           />
         </div>
         <Image
           className={`${styles.backgroundImg}`}
-          src="/images/journey/slide/1.jpg"
+          src="/images/journey/slideBackground/1.png"
           alt="Background Image"
-          width={"1800"}
+          width={"300"}
           height={"900"}
         />
       </div>
@@ -154,9 +154,9 @@ const JourneySection = () => {
         </div>
         <Image
           className={`${styles.backgroundImg}`}
-          src="/images/journey/slide/2.jpg"
+          src="/images/journey/slideBackground/2.png"
           alt="Background Image"
-          width={"1800"}
+          width={"300"}
           height={"900"}
         />
       </div>
@@ -217,9 +217,9 @@ const JourneySection = () => {
         </div>
         <Image
           className={`${styles.backgroundImg}`}
-          src="/images/journey/slide/3.jpg"
+          src="/images/journey/slideBackground/3.png"
           alt="Background Image"
-          width={"1800"}
+          width={"300"}
           height={"900"}
         />
       </div>

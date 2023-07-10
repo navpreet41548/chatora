@@ -10,7 +10,8 @@
   height: 100%;
   position: absolute;
   overflow: hidden;
-  transition: all 2s ease;
+  /* transition: all 1s ease; */
+  background-color: black;
 }
 
 .mainSlide {
@@ -107,8 +108,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  filter: blur(10px) brightness(50%);
+  /* filter: blur(10px) brightness(50%); */
   object-fit: cover;
+  /* display: none; */
 }
 
 .backgroundImgMain {

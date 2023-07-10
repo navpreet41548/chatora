@@ -227,23 +227,23 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
     scrollTrigger: {
       trigger: "#journey",
       start: "top top",
-      // end: "bottom top",
-      end: "+=" + window.innerHeight * 2,
+      end: "bottom top",
+      // end: "+=" + window.innerHeight * 3,
+      scrub: true,
       pin: "#journey",
-      // markers: true,
+      markers: true,
       onUpdate: (self) => {
-        if (self.progress > 0 && self.progress < 0.25) {
-          document.getElementById("slide1").classList.remove("transformSlide");
-        } else if (self.progress > 0.25 && self.progress < 0.5) {
-          document.getElementById("slide1").classList.add("transformSlide");
-          document.getElementById("slide2").classList.remove("transformSlide2");
-        } else if (self.progress > 0.5 && self.progress < 0.75) {
-          document.getElementById("slide2").classList.add("transformSlide2");
-          document.getElementById("slide3").classList.remove("transformSlide3");
-        } else if (self.progress > 0.75 && self.progress < 1) {
-          document.getElementById("slide3").classList.add("transformSlide3");
-        }
-
+        // if (self.progress > 0 && self.progress < 0.25) {
+        //   document.getElementById("slide1").classList.remove("transformSlide");
+        // } else if (self.progress > 0.25 && self.progress < 0.5) {
+        //   document.getElementById("slide1").classList.add("transformSlide");
+        //   document.getElementById("slide2").classList.remove("transformSlide2");
+        // } else if (self.progress > 0.5 && self.progress < 0.75) {
+        //   document.getElementById("slide2").classList.add("transformSlide2");
+        //   document.getElementById("slide3").classList.remove("transformSlide3");
+        // } else if (self.progress > 0.75 && self.progress < 1) {
+        //   document.getElementById("slide3").classList.add("transformSlide3");
+        // }
         if (self.progress > 0.99) {
           // document.getElementById("nav").classList.remove("sticky");
           document.getElementById("nav").classList.remove("transformNav");
@@ -255,6 +255,17 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
         document.getElementById("nav").classList.remove("transformNav"),
     },
   });
+
+  tl2
+    .to("#slide1", {
+      xPercent: 100,
+    })
+    .to("#slide2", {
+      xPercent: -100,
+    })
+    .to("#slide3", {
+      yPercent: -100,
+    });
 }
 
 const tl3 = gsap.timeline({
