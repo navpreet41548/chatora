@@ -231,7 +231,7 @@ if (gsap !== undefined && ScrollTrigger !== undefined) {
       // end: "+=" + window.innerHeight * 3,
       scrub: true,
       pin: "#journey",
-      markers: true,
+      // markers: true,
       onUpdate: (self) => {
         // if (self.progress > 0 && self.progress < 0.25) {
         //   document.getElementById("slide1").classList.remove("transformSlide");
